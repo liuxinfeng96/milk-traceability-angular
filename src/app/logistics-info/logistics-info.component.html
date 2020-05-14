@@ -1,0 +1,30 @@
+<div class="wrap">
+    <div class="content">
+        <ul class="table">
+            <li><label>产品ID：</label><input [(ngModel)]="logInfo.id"></li>
+            <li><label>物流公司：</label><input [(ngModel)]="logInfo.logCopName"></li>
+            <li><label>出发时间：</label>
+                <nz-date-picker
+                nzShowTime
+                nzFormat="yyyy-MM-dd HH:mm:ss"
+                nzPlaceHolder="Select Time"
+                [(ngModel)]="logInfo.logDepartureTm"
+              ></nz-date-picker></li>
+            <li><label>到达时间:</label>
+                <nz-date-picker
+                nzShowTime
+                nzFormat="yyyy-MM-dd HH:mm:ss"
+                nzPlaceHolder="Select Time"
+                [(ngModel)]="logInfo.logArrivalTm"
+              ></nz-date-picker></li>
+            <li><label>出发地：</label><input [(ngModel)]="logInfo.logDeparturePl"></li>
+            <li><label>目的地：</label><input [(ngModel)]="logInfo.logDest"></li>
+            <li><label>运送方式：</label><input [(ngModel)]="logInfo.logMOT"></li>
+            <li><label>平均温度：</label><input [(ngModel)]="logInfo.tempAvg"></li>
+        </ul>
+        <div class="bottom">
+            <button class="submit" (click)="add()">提交</button>
+            <button class="cancel" (click)="cancel()">取消</button>
+        </div>
+    </div> 
+</div>

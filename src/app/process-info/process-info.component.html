@@ -1,0 +1,14 @@
+<div class="wrap">
+    <div class="content">
+        <ul class="table">
+            <li><label>产品ID：</label><input [(ngModel)]="processInfo.id"></li>
+            <li><label>蛋白质含量：</label><input [(ngModel)]="processInfo.proteinContent"></li>
+            <li><label>杀菌时间：</label><input [(ngModel)]="processInfo.sterilizeTime"></li>
+            <li><label>储存时间：</label><input [(ngModel)]="processInfo.storageTime"></li>
+        </ul>
+        <div class="bottom">
+            <button class="submit" (click)="add()">提交</button>
+            <button class="cancel" (click)="cancel()">取消</button>
+        </div>
+    </div> 
+</div>

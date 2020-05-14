@@ -1,0 +1,15 @@
+<div class="wrap">
+    <div class="content">
+        <ul class="table">
+            <li><label>产品ID：</label><input [(ngModel)]="sourceInfo.id"></li>
+            <li><label>牧草指标：</label><input [(ngModel)]="sourceInfo.grassState"></li>
+            <li><label>奶牛状态：</label><input [(ngModel)]="sourceInfo.cowState"></li>
+            <li><label>生牛乳指标：</label><input [(ngModel)]="sourceInfo.milkState"></li>
+        </ul>
+        <div class="bottom">
+            <button class="submit" (click)="add()">提交</button>
+            <button class="cancel" (click)="cancel()">取消</button>
+        </div>
+    </div> 
+</div>
+

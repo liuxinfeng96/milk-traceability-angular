@@ -1,0 +1,19 @@
+.wrap{
+    height: 100%;
+    width: 100%;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkslateblue;
+    height: 120px;
+}
+.header h1{
+    margin: 0;
+    color: white;
+}
+.footer{
+    background-color: darkslateblue;
+    height: 100px;
+}
