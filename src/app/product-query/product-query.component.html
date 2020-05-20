@@ -1,4 +1,53 @@
 <div class="wrap">
-    <p>product-query works!</p>
+   <div class="header">
+    <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+        <input type="text" nz-input placeholder="输入要查询的产品ID" [(ngModel)] = "searchId"/>
+      </nz-input-group>
+    <ng-template #suffixButton>
+        <button nz-button nzType="primary" nzSize="large" nzSearch (click)="queryMilk()">Search</button>
+      </ng-template>
+   </div>
+   <div class="content">
+    <nz-table #basicTable [nzData]="milkInfos" [nzPageSize]=6 *ngIf ="!searchMilkInfo">
+        <thead>
+          <tr>
+            <th>产品ID</th>
+            <th>产地</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody *ngIf ="milkInfos">
+          <tr *ngFor="let milk of basicTable.data">
+            <td>{{ milk.Key }}</td>
+            <td>{{ milk.Record.milkLogInfo.logDeparturePl}}</td>
+            <td>
+            <a routerLink = "/productInfo/{{ milk.Key }}" >产品溯源</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a routerLink = "/historyInfo/{{ milk.Key }}">历史信息</a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+      <nz-table #basicTable2  [nzData]="searchMilkInfo" [nzPageSize]=6  *ngIf ="searchMilkInfo">
+        <thead>
+          <tr>
+            <th>产品ID</th>
+            <th>产地</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{searchMilkInfo.milkID}}</td>
+            <td>{{searchMilkInfo.milkLogInfo.logDeparturePl}}</td>
+            <td>
+              <a routerLink = "/productInfo/{{ searchMilkInfo.milkID }}">产品溯源</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a routerLink = "/productInfo/{{ searchMilkInfo.milkID }}">历史信息</a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+   </div>
 </div>
 

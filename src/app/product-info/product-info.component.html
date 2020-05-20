@@ -1,0 +1,22 @@
+<div class="wrap" *ngIf = "milkInfo">
+    <h1>产品ID：{{milkInfo.milkID}}</h1>
+    <div class="content">
+        <ul class="sourceInfo">
+            <li><label>牧草指标：</label><p>{{milkInfo.milkSourceInfo.grassState}}</p></li>
+            <li><label>奶牛状态指标：</label><p>{{milkInfo.milkSourceInfo.cowState}}</p></li>
+            <li><label>生牛乳指标：</label><p>{{milkInfo.milkSourceInfo.milkState}}</p></li>
+            <li><label>蛋白质含量：</label><p>{{milkInfo.milkProcessInfo.proteinContent}}</p></li>
+            <li><label>杀菌时间：</label><p>{{milkInfo.milkProcessInfo.sterilizeTime}}</p></li>
+            <li><label>存储时间：</label><p>{{milkInfo.milkProcessInfo.storageTime}}</p></li>
+        </ul>
+        <ul class="logisticsInfo">
+            <li><label>物流公司：</label><p>{{milkInfo.milkLogInfo.logCopName}}</p></li>
+            <li><label>出发时间：</label><p>{{milkInfo.milkLogInfo.logDepartureTm}}</p></li>
+            <li><label>到达时间：</label><p>{{milkInfo.milkLogInfo.logArrivalTm}}</p></li>
+            <li><label>出发地：</label><p>{{milkInfo.milkLogInfo.logDeparturePl}}</p></li>
+            <li><label>目的地：</label><p>{{milkInfo.milkLogInfo.logDest}}</p></li>
+            <li><label>运送方式：</label><p>{{milkInfo.milkLogInfo.logMOT}}</p></li>
+            <li><label>平均温度：</label><p>{{milkInfo.milkLogInfo.tempAvg}}</p></li>
+        </ul>
+    </div> 
+</div>

@@ -1,0 +1,27 @@
+<div class="wrap" *ngIf = "historyInfos">
+    <h1>产品ID：{{milkId}}</h1>
+    <div class="content">
+        <ul class="block" *ngFor = "let historyInfo of historyInfos">
+            <li><label>区块ID：</label><p>{{historyInfo.TxId}}</p></li>
+            <li><label>具体信息：</label>
+                <ul class="info">
+                    <li class="info-head"><label>牧草指标：</label><p>{{historyInfo.Value.milkSourceInfo.grassState}}</p></li>
+                    <li><label>奶牛状态指标：</label><p>{{historyInfo.Value.milkSourceInfo.cowState}}</p></li>
+                    <li><label>生牛乳指标：</label><p>{{historyInfo.Value.milkSourceInfo.milkState}}</p></li>
+                    <li><label>蛋白质含量：</label><p>{{historyInfo.Value.milkProcessInfo.proteinContent}}</p></li>
+                    <li><label>杀菌时间：</label><p>{{historyInfo.Value.milkProcessInfo.sterilizeTime}}</p></li>
+                    <li><label>储存时间：</label><p>{{historyInfo.Value.milkProcessInfo.storageTime}}</p></li>
+                    <li><label>物流公司：</label><p>{{historyInfo.Value.milkLogInfo.logCopName}}</p></li>
+                    <li><label>出发时间：</label><p>{{historyInfo.Value.milkLogInfo.logDepartureTm}}</p></li>
+                    <li><label>到达时间：</label><p>{{historyInfo.Value.milkLogInfo.logArrivalTm}}</p></li>
+                    <li><label>出发地：</label><p>{{historyInfo.Value.milkLogInfo.logDeparturePl}}</p></li>
+                    <li><label>目的地：</label><p>{{historyInfo.Value.milkLogInfo.logDest}}</p></li>
+                    <li><label>运送方式：</label><p>{{historyInfo.Value.milkLogInfo.logMOT}}</p></li>
+                    <li><label>平均温度：</label><p>{{historyInfo.Value.milkLogInfo.tempAvg}}</p></li>
+                </ul>
+        </li>
+            <li><label>交易时间戳：</label><p>{{historyInfo.Timestamp}}</p></li>
+            <li><label>是否删除过：</label><p>{{historyInfo.IsDelete}}</p></li>
+        </ul>
+    </div> 
+</div>

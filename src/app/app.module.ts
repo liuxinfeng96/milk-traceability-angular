@@ -15,6 +15,8 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { ProductInfoComponent } from './product-info/product-info.component';
+import { HistoryInfoComponent } from './history-info/history-info.component';
 registerLocaleData(zh);
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ registerLocaleData(zh);
     ProcessInfoComponent,
     LogisticsInfoComponent,
     ProductQueryComponent,
-    MenuComponent
+    MenuComponent,
+    ProductInfoComponent,
+    HistoryInfoComponent
   ],
   imports: [
     BrowserModule,
