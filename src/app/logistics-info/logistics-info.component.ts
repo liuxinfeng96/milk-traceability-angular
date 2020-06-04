@@ -31,18 +31,19 @@ export class LogisticsInfoComponent implements OnInit {
   }
   add():void{
     if(this.logInfo.id==''){
-      this.message.error('ID不能为空',{nzDuration:2000}).onClose
+      this.message.error('ID不能为空',{nzDuration:2000})
     }else{
-      this.message.loading('数据提交中',{ nzDuration: 2500}).onClose
+      let loading = this.message.loading('数据提交中',{ nzDuration: 0}).messageId
       this.appService.addLogInfo(this.logInfo).subscribe(
         (data)=>{
         if(data.status == '1'){
+          this.message.remove(loading);
           this.message.success('上链成功',{nzDuration:1000}).onClose.subscribe(()=>this.location.back());
         }else{
-          this.message.error(JSON.stringify(data.message),{nzDuration: 1000}).onClose
+          this.message.error(JSON.stringify(data.message),{nzDuration: 1000})
         }
       },
-      (error: Error) => {this.message.error(JSON.stringify(error),{nzDuration: 3000}).onClose}
+      (error: Error) => {this.message.error(JSON.stringify(error),{nzDuration: 3000})}
       );
     }
   }

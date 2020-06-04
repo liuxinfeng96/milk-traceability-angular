@@ -5,6 +5,7 @@
     justify-content: center;
     height: 729px;
     background-color: lavender;
+    overflow: hidden;
 }
 .wrap h1{
     margin: 12px;
@@ -12,7 +13,8 @@
 .content{
     display: flex;
     align-items: center;
-    justify-content: center;
+    overflow-x:auto;
+    width: 100%;
 }
 .block{
     padding: 18px;
