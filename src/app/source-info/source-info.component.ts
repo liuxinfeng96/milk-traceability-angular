@@ -24,14 +24,14 @@ export class SourceInfoComponent implements OnInit{
   }
   add(): void {
     if(this.sourceInfo.id==''){
-      this.message.error('ID不能为空',{nzDuration:2500})
+      this.message.error('ID不能为空',{nzDuration:2000})
     }else{
-      let loading = this.message.loading('数据提交中',{ nzDuration: 2500}).messageId
+      let loading = this.message.loading('数据提交中',{ nzDuration: 0}).messageId
       
       this.appService.addSourceInfo(this.sourceInfo).subscribe(
         (data)=>{
-        this.message.remove(loading)
         if(data.status == '1'){
+          this.message.remove(loading)
           this.message.success('上链成功',{nzDuration:1000}).onClose.subscribe(()=>this.location.back());
         }else{
           this.message.error(JSON.stringify(data.message),{nzDuration: 1000})

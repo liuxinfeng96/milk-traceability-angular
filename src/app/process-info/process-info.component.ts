@@ -31,8 +31,8 @@ export class ProcessInfoComponent implements OnInit {
       let loading = this.message.loading('数据提交中',{ nzDuration: 0}).messageId
       this.appService.addProcessInfo(this.processInfo).subscribe(
         (data)=>{
-       this.message.remove(loading)
         if(data.status == '1'){
+          this.message.remove(loading)
           this.message.success('上链成功',{nzDuration:1000}).onClose.subscribe(()=>this.location.back());
         }else{
           this.message.error(JSON.stringify(data.message),{nzDuration: 1000})
